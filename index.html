@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МеблеваМайстерня – Меблевий салон</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🪑</span>
+                <span class="logo-text">МеблеваМайстерня</span>
+            </div>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Головна</a></li>
+                    <li><a href="#catalog" class="nav-link">Каталог</a></li>
+                    <li><a href="#about" class="nav-link">Про нас</a></li>
+                    <li><a href="#gallery" class="nav-link">Галерея</a></li>
+                    <li><a href="#contacts" class="nav-link">Контакти</a></li>
+                </ul>
+            </nav>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-slider" id="heroSlider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1440&q=80')">
+                <div class="slide-content">
+                    <h1>Затишок та стиль<br>у вашому домі</h1>
+                    <p>Преміальні меблі для кожного простору</p>
+                    <a href="#catalog" class="btn btn-primary">Переглянути каталог</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1440&q=80')">
+                <div class="slide-content">
+                    <h1>Спальня<br>вашої мрії</h1>
+                    <p>Ліжка, матраци та шафи від виробника</p>
+                    <a href="#catalog" class="btn btn-primary">Детальніше</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1440&q=80')">
+                <div class="slide-content">
+                    <h1>Кухні на замовлення</h1>
+                    <p>Індивідуальний дизайн під ваш простір</p>
+                    <a href="#contacts" class="btn btn-primary">Замовити консультацію</a>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev" id="prevSlide">&#10094;</button>
+        <button class="slider-btn next" id="nextSlide">&#10095;</button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1200">0</span>
+                    <span class="stat-label">Задоволених клієнтів</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="350">0</span>
+                    <span class="stat-label">Моделей меблів</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">Років досвіду</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="98">0</span>
+                    <span class="stat-label">% позитивних відгуків</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <h2 class="section-title">Наш каталог</h2>
+            <p class="section-subtitle">Оберіть меблі для кожної кімнати</p>
+            <div class="filter-tabs" id="filterTabs">
+                <button class="tab active" data-filter="all">Всі</button>
+                <button class="tab" data-filter="living">Вітальня</button>
+                <button class="tab" data-filter="bedroom">Спальня</button>
+                <button class="tab" data-filter="kitchen">Кухня</button>
+                <button class="tab" data-filter="office">Офіс</button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+
+                <!-- ===== ВІТАЛЬНЯ ===== -->
+                <div class="product-card" data-category="living">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" alt="Диван Комфорт">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Диван «Комфорт»', '18 500 грн', 'Розкладний диван із натуральної тканинної оббивки. Ортопедичне сидіння, надійний механізм «Єврокнижка». Доступний у 8 кольорах.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Диван «Комфорт»</h3>
+                        <p class="product-cat">Вітальня</p>
+                        <span class="price">18 500 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="living">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&q=80" alt="Крісло Релакс">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Крісло «Релакс»', '7 200 грн', 'Ергономічне крісло для відпочинку з м\'яким наповнювачем преміум-класу. Дерев\'яні ніжки із масиву бука. Знімний чохол для прання.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Крісло «Релакс»</h3>
+                        <p class="product-cat">Вітальня</p>
+                        <span class="price">7 200 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="living">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=400&q=80" alt="Диван Лофт">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Диван «Лофт»', '22 900 грн', 'Тримісний диван у стилі лофт. Каркас із металу, оббивка — натуральна шкіра. Підходить для великих вітальень. Розміри: 220×85×85 см.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Диван «Лофт»</h3>
+                        <p class="product-cat">Вітальня</p>
+                        <span class="price">22 900 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="living">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=400&q=80" alt="Журнальний стіл">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Стіл «Журнальний»', '4 800 грн', 'Журнальний стіл із масиву горіха та загартованого скла. Нижня полиця для журналів. Розміри: 110×60×45 см. Ніжки із хромованого металу.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Стіл «Журнальний»</h3>
+                        <p class="product-cat">Вітальня</p>
+                        <span class="price">4 800 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="living">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?w=400&q=80" alt="Стінка Прованс">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Стінка «Прованс»', '32 000 грн', 'Модульна стінка у стилі прованс. Включає: вітрину, тумбу під ТВ, відкриті полиці та антресолі. Матеріал — МДФ лак, дуб сонома. Ширина 3,2 м.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Стінка «Прованс»</h3>
+                        <p class="product-cat">Вітальня</p>
+                        <span class="price">32 000 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="living">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=400&q=80" alt="Тумба TV">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Тумба під TV «Медіа»', '5 600 грн', 'Тумба під телевізор із системою прихованого кабелю. 2 відкриті ніші, 2 дверцята з м\'яким закриттям. Шириною 140 см. Матеріал: МДФ, дуб.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Тумба під TV «Медіа»</h3>
+                        <p class="product-cat">Вітальня</p>
+                        <span class="price">5 600 грн</span>
+                    </div>
+                </div>
+
+                <!-- ===== СПАЛЬНЯ ===== -->
+                <div class="product-card" data-category="bedroom">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&q=80" alt="Ліжко Сон">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Ліжко «Сон»', '24 000 грн', 'Двоспальне ліжко з масиву дуба. Розмір 160×200 см. Підйомний механізм із газовими амортизаторами. М\'яке узголів\'я в оксамиті.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ліжко «Сон»</h3>
+                        <p class="product-cat">Спальня</p>
+                        <span class="price">24 000 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bedroom">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="Шафа Класик">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Шафа-купе «Класик»', '15 800 грн', 'Просторна шафа-купе. Ширина 2 м, глибина 60 см. Дзеркальні дверцята у алюмінієвому профілі. Внутрішнє наповнення під замовлення.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Шафа-купе «Класик»</h3>
+                        <p class="product-cat">Спальня</p>
+                        <span class="price">15 800 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bedroom">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&q=80" alt="Комод Елегант">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Комод «Елегант»', '8 900 грн', 'Комод із 6 ящиками на плавних напрямних. Матеріал — масив дуба. Розміри: 90×45×110 см. Покриття: лак на водній основі.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Комод «Елегант»</h3>
+                        <p class="product-cat">Спальня</p>
+                        <span class="price">8 900 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bedroom">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80" alt="Ліжко Скандинавія">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Ліжко «Скандинавія»', '19 500 грн', 'Односпальне ліжко у скандинавському стилі. Розмір 120×200 см. Масив берези. Лаконічний дизайн, щільне узголів\'я. Без механізму підйому.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ліжко «Скандинавія»</h3>
+                        <p class="product-cat">Спальня</p>
+                        <span class="price">19 500 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bedroom">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=80" alt="Тумбочка Нічна">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Тумбочка «Нічна»', '3 200 грн', 'Прикроватна тумбочка з 2 ящиками та відкритою нішею. Ніжки з дерева, фасад МДФ. Розміри: 50×40×55 см. Продається в комплекті 2 шт.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Тумбочка «Нічна»</h3>
+                        <p class="product-cat">Спальня</p>
+                        <span class="price">3 200 грн / шт</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bedroom">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Туалетний столик">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Туалетний столик «Венеція»', '11 400 грн', 'Туалетний столик з великим дзеркалом та підсвіткою. 4 ящики для косметики. Матеріал: МДФ у білому матовому лаку. Розміри: 100×45×155 см.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Туалетний столик «Венеція»</h3>
+                        <p class="product-cat">Спальня</p>
+                        <span class="price">11 400 грн</span>
+                    </div>
+                </div>
+
+                <!-- ===== КУХНЯ ===== -->
+                <div class="product-card" data-category="kitchen">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80" alt="Кухня Модерн">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Кухня «Модерн»', 'від 45 000 грн', 'Кухонний гарнітур на замовлення. Фасади — МДФ із акриловим покриттям. Стільниця з натурального граніту. Фурнітура Blum. Виготовлення 3–4 тижні.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Кухня «Модерн»</h3>
+                        <p class="product-cat">Кухня</p>
+                        <span class="price">від 45 000 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kitchen">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&q=80" alt="Кухня Класика">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Кухня «Класика»', 'від 38 000 грн', 'Класичний кухонний гарнітур із фрезерованими фасадами. Масив дуба або сосни на вибір. Стільниця — кераміка або кварц. Підходить для невеликих кухонь від 8 м².')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Кухня «Класика»</h3>
+                        <p class="product-cat">Кухня</p>
+                        <span class="price">від 38 000 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kitchen">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&q=80" alt="Обідній стіл">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Стіл обідній «Родина»', '9 800 грн', 'Розкладний обідній стіл із масиву дуба. Розмір 120–180×80 см. Механізм розкладання — метелик. Розрахований на 4–8 осіб. Покриття: масло-віск.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Стіл обідній «Родина»</h3>
+                        <p class="product-cat">Кухня</p>
+                        <span class="price">9 800 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kitchen">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1503789146722-cf137a3c0fea?w=400&q=80" alt="Стілець Обідній">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Стілець «Обідній» (комплект 4 шт)', '6 400 грн', 'Набір із 4 стільців з м\'яким сидінням. Ніжки — масив дуба. Оббивка — тканина або кожзам на вибір. Вантажопідйомність 130 кг.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Стільці «Обідні» × 4</h3>
+                        <p class="product-cat">Кухня</p>
+                        <span class="price">6 400 грн / комплект</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kitchen">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Кухня Лофт">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Кухня «Лофт»', 'від 52 000 грн', 'Кухонний гарнітур у стилі лофт. Фасади з текстурованого МДФ під бетон, металеві ручки-скоби. Острівець у комплекті. Підсвічування в цоколі.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Кухня «Лофт»</h3>
+                        <p class="product-cat">Кухня</p>
+                        <span class="price">від 52 000 грн</span>
+                    </div>
+                </div>
+
+                <!-- ===== ОФІС ===== -->
+                <div class="product-card" data-category="office">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&q=80" alt="Стіл Робочий">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Стіл «Робочий»', '6 500 грн', 'Ергономічний письмовий стіл із системою управління кабелями. Розміри: 140×70×76 см. Тумба на колесах у комплекті. МДФ, дуб сонома.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Стіл «Робочий»</h3>
+                        <p class="product-cat">Офіс</p>
+                        <span class="price">6 500 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="office">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" alt="Крісло Директор">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Крісло «Директор»', '9 200 грн', 'Представницьке офісне крісло. Натуральна шкіра чорного або коричневого кольору. Регулювання висоти, нахилу спинки та підлокітників. Гарантія 2 роки.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Крісло «Директор»</h3>
+                        <p class="product-cat">Офіс</p>
+                        <span class="price">9 200 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="office">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Шафа Офісна">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Шафа офісна «Архів»', '7 800 грн', 'Металева шафа для зберігання документів. 4 полиці, замок із ключем. Розміри: 80×40×185 см. Антикорозійне покриття. Колір: сірий або бежевий.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Шафа офісна «Архів»</h3>
+                        <p class="product-cat">Офіс</p>
+                        <span class="price">7 800 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="office">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&q=80" alt="Стіл Переговорний">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Стіл переговорний «Конференс»', '28 500 грн', 'Переговорний стіл на 10 осіб. Розміри: 300×120 см. Стільниця із загартованого скла або ЛДСП на вибір. Прихована система прокладки кабелів.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Стіл «Конференс»</h3>
+                        <p class="product-cat">Офіс</p>
+                        <span class="price">28 500 грн</span>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="office">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1565895405138-6c3a1555da6a?w=400&q=80" alt="Стелаж Бібліотека">
+                        <div class="product-overlay">
+                            <button class="btn-overlay" onclick="openModal('Стелаж «Бібліотека»', '12 300 грн', 'Книжкова шафа-стелаж із масиву сосни. 5 відкритих полиць, нижні закриті шухляди. Розміри: 100×30×220 см. Підходить для офісу та вітальні.')">Детальніше</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Стелаж «Бібліотека»</h3>
+                        <p class="product-cat">Офіс</p>
+                        <span class="price">12 300 грн</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Наш салон">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title left">Про нас</h2>
+                    <p>МеблеваМайстерня – це меблевий салон із 15-річним досвідом роботи у Львові. Ми поєднуємо класичну майстерність із сучасними технологіями виробництва.</p>
+                    <p>Наша команда дизайнерів та столярів допоможе вам створити ідеальний інтер'єр, що відповідатиме вашим потребам та стилю.</p>
+                    <ul class="advantages">
+                        <li>✔ Власне виробництво у Львові</li>
+                        <li>✔ Гарантія 3 роки на всі вироби</li>
+                        <li>✔ Безкоштовна доставка та монтаж</li>
+                        <li>✔ Індивідуальні рішення на замовлення</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Галерея інтер'єрів</h2>
+            <p class="section-subtitle">Реалізовані проекти наших клієнтів</p>
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Спальня">
+                    <div class="gallery-caption">Спальня в скандинавському стилі</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" alt="Вітальня">
+                    <div class="gallery-caption">Сучасна вітальня</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80" alt="Кухня">
+                    <div class="gallery-caption">Кухня «Мінімалізм»</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" alt="Офіс">
+                    <div class="gallery-caption">Домашній офіс</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=400&q=80" alt="Гардероб">
+                    <div class="gallery-caption">Гардеробна кімната</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакти</h2>
+            <p class="section-subtitle">Зв'яжіться з нами або залиште заявку</p>
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Адреса</strong>
+                            <p>м. Львів, вул. Городоцька, 123</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Телефон</strong>
+                            <p><a href="tel:+380321234567">+38 (032) 123-45-67</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:info@mebleva-maisterniya.ua">info@mebleva-maisterniya.ua</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">⏰</span>
+                        <div>
+                            <strong>Графік роботи</strong>
+                            <p>Пн–Сб: 9:00–19:00<br>Нд: 10:00–17:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" novalidate>
+                    <h3>Замовити консультацію</h3>
+                    <div class="form-group">
+                        <label for="name">Ім'я *</label>
+                        <input type="text" id="name" name="name" placeholder="Ваше ім'я">
+                        <span class="error-msg" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+38 (0XX) XXX-XX-XX">
+                        <span class="error-msg" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com">
+                        <span class="error-msg" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Повідомлення</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Опишіть ваше замовлення або запитання..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Надіслати заявку</button>
+                    <div class="form-success" id="formSuccess">✅ Дякуємо! Ми зв'яжемося з вами найближчим часом.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-icon">🪑</span>
+                    <span class="logo-text">МеблеваМайстерня</span>
+                    <p>Якісні меблі для вашого дому з 2009 року</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Навігація</h4>
+                    <ul>
+                        <li><a href="#hero">Головна</a></li>
+                        <li><a href="#catalog">Каталог</a></li>
+                        <li><a href="#about">Про нас</a></li>
+                        <li><a href="#contacts">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Категорії</h4>
+                    <ul>
+                        <li><a href="#catalog">Вітальня</a></li>
+                        <li><a href="#catalog">Спальня</a></li>
+                        <li><a href="#catalog">Кухня</a></li>
+                        <li><a href="#catalog">Офіс</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Ми у соцмережах</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                        <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                        <a href="#" class="social-link" aria-label="Telegram">TG</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 МеблеваМайстерня. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+        <div class="modal" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 id="modalTitle"></h3>
+            <p class="modal-price" id="modalPrice"></p>
+            <p id="modalDesc"></p>
+            <button class="btn btn-primary" onclick="closeModal()">Замовити</button>
+        </div>
+    </div>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" aria-label="Нагору">&#8679;</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
